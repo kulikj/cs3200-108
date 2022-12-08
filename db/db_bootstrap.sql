@@ -1,5 +1,4 @@
 CREATE DATABASE courseplan;
---CREATE USER 'webapp'@'%' IDENTIFIED BY 'password'; --delete when using github stuff
 GRANT ALL PRIVILEGES ON courseplan.* TO 'webapp'@'%';
 FLUSH PRIVILEGES;
 USE courseplan;
