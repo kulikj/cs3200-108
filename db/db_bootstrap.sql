@@ -154,33 +154,33 @@ VALUES
 
 INSERT INTO Major (MajorName)
 VALUES
-       ('Computer Science'),
-       ('Data Science'),
-       ('Cybersecurity');
+       ('CS'),
+       ('DS'),
+       ('CY');
 INSERT INTO Plan (MajorName,SemesterNumber,CourseNumber,DepartmentName)
 VALUES
-       ('Computer Science',1,2500,'CS'),
-       ('Computer Science',2,2510,'CS'),
-       ('Computer Science',3,3000,'CS'),
-       ('Computer Science',4,3500,'DS'),
-       ('Data Science',1,2500,'CS'),
-       ('Data Science',2,2510,'CS'),
-       ('Data Science',3,3000,'CS'),
-       ('Data Science',4,3500,'DS'),
-       ('Cybersecurity',1,2500,'CS');
+       ('CS',1,2500,'CS'),
+       ('CS',2,2510,'CS'),
+       ('CS',3,3000,'CS'),
+       ('CS',4,3500,'DS'),
+       ('DS',1,2500,'CS'),
+       ('DS',2,2510,'CS'),
+       ('DS',3,3000,'CS'),
+       ('DS',4,3500,'DS'),
+       ('CY',1,2500,'CS');
 
 
 INSERT INTO PlanClass (MajorName,CourseNumber,DepartmentName)
 VALUES
-       ('Computer Science',2500,'CS'),
-       ('Computer Science',2510,'CS'),
-       ('Computer Science',3000,'CS'),
-       ('Computer Science',3500,'DS'),
-       ('Data Science',2500,'CS'),
-       ('Data Science',2510,'CS'),
-       ('Data Science',3000,'CS'),
-       ('Data Science',3500,'DS'),
-       ('Cybersecurity',2500,'CS');
+       ('CS',2500,'CS'),
+       ('CS',2510,'CS'),
+       ('CS',3000,'CS'),
+       ('CS',3500,'DS'),
+       ('DS',2500,'CS'),
+       ('DS',2510,'CS'),
+       ('DS',3000,'CS'),
+       ('DS',3500,'DS'),
+       ('CY',2500,'CS');
 
 INSERT INTO Advisor (NUID,FirstName,MiddleName,LastName,BirthDate,StreetAddress,City,State,Country,ZipCode,HireYear)
 VALUES
@@ -239,30 +239,30 @@ VALUES
 
 INSERT INTO Student (NUID,FirstName,MiddleName,LastName,BirthDate,StreetAddress,City,State,Country,ZipCode,CoopCycle,GradYear,MajorName,HighSchoolCEEB,AdvisorID)
 VALUES
-        (1,'Isac','Tiertza','Brockman','2000-10-16','5196 Eagan Hill','El Paso','Texas','United States',79968,'Fall','2022-05','Data Science',82,89),
-        (2,'Marty','Theresina','Putland','2000-09-14','8 Mallory Way','Rochester','New York','United States',14609,'Spring','2022-05','Computer Science',80,80),
- (3,'Reade','Andrea','Mew','2000-11-15','9862 Muir Trail','Springfield','Illinois','United States',62711,'Spring','2022-05','Data Science',89,93),
-        (4,'Kippy','Karisa','Westberg','2002-04-12','7123 Messerschmidt Place','Brooklyn','New York','United States',11247,'Spring','2024-05','Data Science',00222,14),
-        (5,'Jaimie','Bamby','Storch','2002-06-11','4633 Hoard Avenue','New York City','New York','United States',10029,'Spring','2024-05','Cybersecurity',828,18),
-        (6,'Gregory','Karina','Birdwistle','2000-04-26','988 Kings Pass','Saint Paul','Minnesota','United States',55172,'Fall','2022-05','Data Science',8282,33),
-        (7,'Erny','Benson','Alywen','2002-12-31','62257 Bayside Terrace','Gary','Indiana','United States',46406,'Spring','2024-05','Data Science',828,38),
-        (8,'Estrella','Lydon','Pluck','2001-01-08','11350 Troy Drive','Philadelphia','Pennsylvania','United States',19160,'Fall','2022-12','Computer Science',89,79),
-        (9,'Carr','Merle','Hymas','2000-04-23','2461 Florence Pass','Indianapolis','Indiana','United States',46221,'Fall','2022-12','Computer Science',23422,31),
-        (10,'Fulton','Eulalie','Heggison','2000-12-25','3224 Kennedy Drive','San Antonio','Texas','United States',78245,'Spring','2022-12','Computer Science',82,31),
-        (11,'Zared','Stillmann','Aggott','2000-01-30','736 Browning Point','Melbourne','Florida','United States',32919,'Spring','2022-12','Data Science',80,33),
-        (12,'Casar','Romain','Noteyoung','2000-03-07','78 Crownhardt Street','Houston','Texas','United States',77030,'Spring','2022-12','Cybersecurity',82,89),
-        (13,'Hector','Meredith','Huglin','2004-09-22','6381 Stone Corner Crossing','Chicago','Illinois','United States',60686,'Spring','2025-05','Computer Science',82,18),
-        (14,'Johnna','Joellen','Leek','2002-04-19','00791 Oakridge Hill','Canton','Ohio','United States',44760,'Fall','2025-05','Computer Science',89,18),
-        (15,'Ranee','Abdul','Jizhaki','2003-06-04','953 Butterfield Way','Austin','Texas','United States',78749,'Fall','2025-05','Cybersecurity',82,80),
-        (16,'Nathaniel','Bradley','Angric','2001-05-12','91720 Granby Junction','Irving','Texas','United States',75062,'Spring','2023-05','Computer Science',80,33),
-        (17,'Mahalia','Wendall','Hilhouse','2003-08-03','6617 Talisman Place','Omaha','Nebraska','United States',68105,'Fall','2025-05','Cybersecurity',89,38),
-        (18,'Kelwin','Ciro','Liggins','2002-03-25','98 Leroy Crossing','Wichita','Kansas','United States',67205,'Spring','2023-05','Cybersecurity',00222,79),
-        (19,'Skye','Sholom','Bondesen','2002-07-02','68 Arrowood Junction','Winston Salem','North Carolina','United States',27110,'Spring','2025-05','Computer Science',828,31),
-        (20,'Feliks','Trudie','Tourot','2002-11-12','54 Express Alley','Erie','Pennsylvania','United States',16522,'Fall','2025-05','Cybersecurity',00222,80);
+        (1,'Isac','Tiertza','Brockman','2000-10-16','5196 Eagan Hill','El Paso','Texas','United States',79968,'Fall','2022-05','DS',82,89),
+        (2,'Marty','Theresina','Putland','2000-09-14','8 Mallory Way','Rochester','New York','United States',14609,'Spring','2022-05','CS',80,80),
+ (3,'Reade','Andrea','Mew','2000-11-15','9862 Muir Trail','Springfield','Illinois','United States',62711,'Spring','2022-05','DS',89,93),
+        (4,'Kippy','Karisa','Westberg','2002-04-12','7123 Messerschmidt Place','Brooklyn','New York','United States',11247,'Spring','2024-05','DS',00222,14),
+        (5,'Jaimie','Bamby','Storch','2002-06-11','4633 Hoard Avenue','New York City','New York','United States',10029,'Spring','2024-05','CY',828,18),
+        (6,'Gregory','Karina','Birdwistle','2000-04-26','988 Kings Pass','Saint Paul','Minnesota','United States',55172,'Fall','2022-05','DS',8282,33),
+        (7,'Erny','Benson','Alywen','2002-12-31','62257 Bayside Terrace','Gary','Indiana','United States',46406,'Spring','2024-05','DS',828,38),
+        (8,'Estrella','Lydon','Pluck','2001-01-08','11350 Troy Drive','Philadelphia','Pennsylvania','United States',19160,'Fall','2022-12','CS',89,79),
+        (9,'Carr','Merle','Hymas','2000-04-23','2461 Florence Pass','Indianapolis','Indiana','United States',46221,'Fall','2022-12','CS',23422,31),
+        (10,'Fulton','Eulalie','Heggison','2000-12-25','3224 Kennedy Drive','San Antonio','Texas','United States',78245,'Spring','2022-12','CS',82,31),
+        (11,'Zared','Stillmann','Aggott','2000-01-30','736 Browning Point','Melbourne','Florida','United States',32919,'Spring','2022-12','DS',80,33),
+        (12,'Casar','Romain','Noteyoung','2000-03-07','78 Crownhardt Street','Houston','Texas','United States',77030,'Spring','2022-12','CY',82,89),
+        (13,'Hector','Meredith','Huglin','2004-09-22','6381 Stone Corner Crossing','Chicago','Illinois','United States',60686,'Spring','2025-05','CS',82,18),
+        (14,'Johnna','Joellen','Leek','2002-04-19','00791 Oakridge Hill','Canton','Ohio','United States',44760,'Fall','2025-05','CS',89,18),
+        (15,'Ranee','Abdul','Jizhaki','2003-06-04','953 Butterfield Way','Austin','Texas','United States',78749,'Fall','2025-05','CY',82,80),
+        (16,'Nathaniel','Bradley','Angric','2001-05-12','91720 Granby Junction','Irving','Texas','United States',75062,'Spring','2023-05','CS',80,33),
+        (17,'Mahalia','Wendall','Hilhouse','2003-08-03','6617 Talisman Place','Omaha','Nebraska','United States',68105,'Fall','2025-05','CY',89,38),
+        (18,'Kelwin','Ciro','Liggins','2002-03-25','98 Leroy Crossing','Wichita','Kansas','United States',67205,'Spring','2023-05','CY',00222,79),
+        (19,'Skye','Sholom','Bondesen','2002-07-02','68 Arrowood Junction','Winston Salem','North Carolina','United States',27110,'Spring','2025-05','CS',828,31),
+        (20,'Feliks','Trudie','Tourot','2002-11-12','54 Express Alley','Erie','Pennsylvania','United States',16522,'Fall','2025-05','CY',00222,80);
 
 INSERT INTO TransferCollege (FederalCode,Name)
 VALUES
-       (3869,'Fundamentals of Computer Science 1'),
+       (3869,'Fundamentals of CS 1'),
        (8,'Discrete Structures'),
        (2541,'Intro to Mathematical Reasoning'),
        (331,'Discrete Structures'),
@@ -278,35 +278,35 @@ VALUES
        (50196,'First Year Seminar'),
        (68985,'Discrete Structures'),
        (1137,'First Year Seminar'),
-       (1355,'Fundamentals of Computer Science 1'),
+       (1355,'Fundamentals of CS 1'),
        (457,'First Year Seminar'),
-       (1,'Fundamentals of Computer Science 1'),
+       (1,'Fundamentals of CS 1'),
        (7,'Intro to Mathematical Reasoning');
 
 
 
 INSERT INTO TransferClass (FederalCode,CourseNumber,CourseDepartment,Hours)
 VALUES
-       (3869,8768,'Cybersecurity',3),
-       (8,6154,'Computer Science',4),
-       (2541,3970,'Cybersecurity',4),
-       (331,1250,'Computer Science',4),
-       (98489,7839,'Cybersecurity',3),
-       (6,2347,'Computer Science',1),
-       (1000,2841,'Data Science',1),
-       (9,8298,'Computer Science',4),
-       (1294,5504,'Data Science',1),
-       (5,1631,'Cybersecurity',1),
-       (85,9169,'Data Science',4),
-       (12,6819,'Cybersecurity',4),
-       (98,5977,'Cybersecurity',4),
-       (50196,6668,'Data Science',1),
-       (68985,1835,'Data Science',4),
-       (1137,9701,'Cybersecurity',1),
-       (1355,9926,'Data Science',4),
-       (457,7714,'Computer Science',1),
-       (1,1525,'Cybersecurity',4),
-       (7,6475,'Computer Science',4);
+       (3869,8768,'CY',3),
+       (8,6154,'CS',4),
+       (2541,3970,'CY',4),
+       (331,1250,'CS',4),
+       (98489,7839,'CY',3),
+       (6,2347,'CS',1),
+       (1000,2841,'DS',1),
+       (9,8298,'CS',4),
+       (1294,5504,'DS',1),
+       (5,1631,'CY',1),
+       (85,9169,'DS',4),
+       (12,6819,'CY',4),
+       (98,5977,'CY',4),
+       (50196,6668,'DS',1),
+       (68985,1835,'DS',4),
+       (1137,9701,'CY',1),
+       (1355,9926,'DS',4),
+       (457,7714,'CS',1),
+       (1,1525,'CY',4),
+       (7,6475,'CS',4);
 
 
 
@@ -319,12 +319,12 @@ VALUES
        ('AP BC Calculus',7,'Math',4,828),
        ('AP BC Calculus',1,'Math',4,89),
        ('AP BC Calculus',2,'Math',4,80),
-       ('AP CSP',2,'Computer Science',4,80),
-       ('AP CSP',5,'Computer Science',4,828),
-       ('AP CSP',7,'Computer Science',4,828),
-       ('AP CSP',6,'Computer Science',4,8282),
-       ('AP CSP',4,'Computer Science',4,00222),
-       ('AP CSP',3,'Computer Science',4,89),
+       ('AP CSP',2,'CS',4,80),
+       ('AP CSP',5,'CS',4,828),
+       ('AP CSP',7,'CS',4,828),
+       ('AP CSP',6,'CS',4,8282),
+       ('AP CSP',4,'CS',4,00222),
+       ('AP CSP',3,'CS',4,89),
        ('AP Physics C',10,'Science',4,82),
        ('AP Physics C',11,'Science',4,80),
        ('AP Physics C',15,'Science',4,82),
