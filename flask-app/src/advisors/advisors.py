@@ -56,9 +56,10 @@ def get_name(last_name):
     return jsonify(json_data)
 
 # adding a class to a major plan
-@advisors.route('/advisors/change_plan/<MajorName>', methods=['GET','POST'])
-def change_plan(MajorName):
+@advisors.route('/advisors/change_plan/', methods=['GET','POST'])
+def change_plan():
         cursor = db.get_db().cursor()
+        major_name = request.form['major']
         sem_number = request.form['number']
         dep = request.form['dep']
         course_num = request.form['num']
@@ -66,7 +67,7 @@ def change_plan(MajorName):
         cursor.execute(
             f''' 
                 INSERT INTO Plan(MajorName, SemesterNumber, CourseNumber, DepartmentName)
-                VALUES ('"{MajorName}"', '{sem_number}', '{course_num}', '{dep}')
+                VALUES ('"{major_name}"', '{sem_number}', '{course_num}', '{dep}')
             ''')
         db.get_db().commit()
         return "Success"

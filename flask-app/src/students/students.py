@@ -88,11 +88,11 @@ def get_plan(major):
     return the_response
 
 
-@students.route('/students/add_minor/<int:student_id>',methods=['GET','POST'])
-def add_minor(student_id):
+@students.route('/students/add_minor/',methods=['GET','POST'])
+def add_minor():
     cursor = db.get_db().cursor()
     minor = request.form['minor']
-    #student_id = request.form['student_id']
+    student_id = request.form['student_id']
     cursor.execute(
         f''' 
             UPDATE Students
