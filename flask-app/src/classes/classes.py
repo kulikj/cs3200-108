@@ -17,7 +17,7 @@ def get_best_class():
         LIMIT 5;
     '''
     cursor.execute(query)
-       # grab the column headers from the returned data
+    # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
 
     # create an empty dictionary object to use in

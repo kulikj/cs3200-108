@@ -74,9 +74,9 @@ def get_advisor_students(advisorID):
 
 
 @students.route('/students/get_plan/<major>', methods=['GET'])
-def get_advisor_studen(major):
+def get_plan(major):
     cursor = db.get_db().cursor()
-    cursor.execute('select * from (select * from Plan where MajorName = {id}) NATURAL JOIN Class'.format(id=major))
+    cursor.execute('select Department, CourseNumber, CourseHours from (select * from Plan p where p.MajorName = "{input_major}") sub NATURAL JOIN Class c'.format(input_major=major))
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -86,3 +86,20 @@ def get_advisor_studen(major):
     the_response.status_code = 200
     the_response.mimetype = 'application/json'
     return the_response
+
+
+@students.route('/students/add_minor/<int:student_id>',methods=['GET','POST'])
+def add_minor(student_id):
+    cursor = db.get_db().cursor()
+    minor = request.form['minor']
+    #student_id = request.form['student_id']
+    cursor.execute(
+        f''' 
+            UPDATE Students
+            SET
+                Minor = '{minor}'
+            WHERE
+                NUID = '{student_id}'
+         ''')
+    db.get_db().commit()
+    return "Success"

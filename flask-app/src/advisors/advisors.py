@@ -35,8 +35,8 @@ def get_name(last_name):
     # get a cursor object from the database
     cursor = db.get_db().cursor()
 
-    # use cursor to query the database for a list of products
-    cursor.execute('select FirstName, LastName, NUID from Advisor where LastName={last}'.format(last=last_name))
+    # use cursor to query the database for a list of advisors
+    cursor.execute('select FirstName, LastName, NUID from Advisor where LastName="{last}"'.format(last=last_name))
 
     # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
@@ -54,3 +54,21 @@ def get_name(last_name):
         json_data.append(dict(zip(column_headers, row)))
 
     return jsonify(json_data)
+
+# adding a class to a major plan
+@advisors.route('/advisors/change_plan/<MajorName>', methods=['GET','POST'])
+def change_plan(MajorName):
+        cursor = db.get_db().cursor()
+        sem_number = request.form['number']
+        dep = request.form['dep']
+        course_num = request.form['num']
+
+        cursor.execute(
+            f''' 
+                INSERT INTO Plan(MajorName, SemesterNumber, CourseNumber, DepartmentName)
+                VALUES ('"{MajorName}"', '{sem_number}', '{course_num}', '{dep}')
+            ''')
+        db.get_db().commit()
+        return "Success"
+
+
