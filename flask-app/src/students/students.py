@@ -99,13 +99,6 @@ def add_minor():
     cursor = db.get_db().cursor()
     minor = request.form['minor']
     student_id = request.form['student_id']
-    cursor.execute(
-        f''' 
-            UPDATE Students
-            SET
-                Minor = '{minor}'
-            WHERE
-                NUID = '{student_id}'
-         ''')
+    cursor.execute('UPDATE Students SET Minor = '{minor}' WHERE NUID = '{student_id}' ').format(minor=minor,student_id=student_id)
     db.get_db().commit()
     return "Success"
