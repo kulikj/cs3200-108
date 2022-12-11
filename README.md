@@ -1,6 +1,6 @@
 # SchedulePlanner Project
 
-This repo contains the different sources that are used in conjunction with AppSmith to create our SchedulePlanner application, to be used by both advisors and students at Northeastern University. SchedulePlanner allows Advisors
+This repo contains the different sources that are used in conjunction with AppSmith to create our SchedulePlanner application, to be used by both advisors and students at Northeastern University. SchedulePlanner allows advisors to better understand what their students need to be taking at Northeastern, while also explaining requirements for different majors to students. As students with non-traditional majors (combined and double majors), the problem of figuring out which classes to take and when to take them directly affects us.
 
 ## Database
 The db folder contains a bootstrap sql file named db_bootstrap.sql which contains the sql for all the tables including mock values. Each table includes primary key(s) and foreign key(s).
