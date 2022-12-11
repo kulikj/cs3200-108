@@ -12,14 +12,14 @@ Here are the following tables and attributes:
 - **Plan**: MajorName, SemesterNumber, CourseNumber, DepartmentNumber
 - **Advisor**: NUID, FirstName, MiddleName, LastName, BirthDate, StreetAddress, City, State, Country, ZipCode, HireYear
 - **HighSchool**: CEEB, Name
-- **Student**: NUID, FirstName,MiddleName,LastName,BirthDate,StreetAddress,City,State,Country,ZipCode,CoopCycle,GradYear,Minor,MajorName,HighschoolCEEB,AdvisorID
+- **Student**: NUID, FirstName, MiddleName, LastName, BirthDate, StreetAddress, City, State, Country, ZipCode, CoopCycle, GradYear, Minor, MajorName, HighschoolCEEB, AdvisorID
 - **TransferCollege**: FederalCode, Name
 - **TransferClass**: FederalCode, CourseNumber, CourseDepartment, Hours
 - **HighSchoolClass**: Name, StudentID, HSDepartment, Hours, CEEB
 
 ## Flask App
 The flask-app folder contains routes for two different personas - advisors and students, as well as for classes. Here, routes contain both get and post requests.
-Student Routes:
+**Student Routes**:
 - Get all students
 - Get all students by major
 - Get all students under an Advisor ID
@@ -27,12 +27,12 @@ Student Routes:
 - Updating a student's minor
 - Getting a courseplan related to a student's major
 
-Advisor Routes:
+**Advisor Routes**:
 - Get all advisors by their NUID
 - Get all advisors by their last name
 - Changing the courses associated with a major plan
 
-Class Routes:
+**Class Routes**:
 - Get the top 5 rated classes
 - Get all the classes associated with a department
 
