@@ -81,7 +81,7 @@ def get_advisor_students(advisorID):
 @students.route('/students/get_plan/<major>', methods=['GET'])
 def get_plan(major):
     cursor = db.get_db().cursor()
-    cursor.execute('select Department, CourseNumber, CourseHours from (select * from Plan p where p.MajorName = "{input_major}") sub NATURAL JOIN Class c'.format(input_major=major))
+    cursor.execute('select Department, CourseNumber, CourseHours, Professor, Rating, PrerequisiteCourseNumber, PrerequisiteDepartment from (select * from Plan p where p.MajorName = "{input_major}") sub NATURAL JOIN Class c'.format(input_major=major))
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -92,19 +92,7 @@ def get_plan(major):
     the_response.mimetype = 'application/json'
     return the_response
 
-@students.route('/students/get_plan_minor/<minor>', methods=['GET'])
-def get_plan_min(minor):
-    cursor = db.get_db().cursor()
-    cursor.execute('select Department, CourseNumber, CourseHours from (select * from Plan p where p.Minor = "{minor}") sub NATURAL JOIN Class c'.format(minor=minor))
-    row_headers = [x[0] for x in cursor.description]
-    json_data = []
-    theData = cursor.fetchall()
-    for row in theData:
-        json_data.append(dict(zip(row_headers, row)))
-    the_response = make_response(jsonify(json_data))
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
+
 
 @students.route('/students/add_minor/',methods=['GET','POST'])
 def add_minor():
