@@ -19,6 +19,7 @@ Here are the following tables and attributes:
 
 ## Flask App
 The flask-app folder contains routes for two different personas - advisors and students, as well as for classes. Here, routes contain both get and post requests.
+
 **Student Routes**:
 - Get all students
 - Get all students by major
@@ -44,4 +45,4 @@ The 'docker-compose.yml' file is used to work as a medium by putting files withi
 Ngrok was utilied to host necessary local data and connect our REST Api in AppSmith. Due to the use of a free account, there are some limitations when it comes to the number of requests. Through the use of ngrok and appsmith, we were able to create a functional and operational application that utilizes a schedule database.
 
 ## Video Demo
-INSERT HERE
+[![Video](https://img.youtube.com/vi/yukyIz2Y1is/sddefault.jpg)](https://youtu.be/yukyIz2Y1is)
