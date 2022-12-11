@@ -81,7 +81,7 @@ def get_advisor_students(advisorID):
 @students.route('/students/get_plan/<major>', methods=['GET'])
 def get_plan(major):
     cursor = db.get_db().cursor()
-    cursor.execute('select Department, CourseNumber, CourseHours, Professor, Rating, PrerequisiteCourseNumber, PrerequisiteDepartment from (select * from Plan p where p.MajorName = "{input_major}") sub NATURAL JOIN Class c'.format(input_major=major))
+    cursor.execute('select * from (select * from Plan p where p.MajorName = "{input_major}") sub NATURAL JOIN Class c'.format(input_major=major))
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
