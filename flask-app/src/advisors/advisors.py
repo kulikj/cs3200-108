@@ -59,9 +59,9 @@ def get_name(last_name):
 def change_plan():
         cursor = db.get_db().cursor()
         major_name = str(request.form['major'])
-        sem_number = int(request.form['number'])
+        sem_number = int(request.form['sem_number'])
         dep = str(request.form['dep'])
-        course_num = int(request.form['num'])
+        course_num = int(request.form['course_number'])
         cursor.execute('INSERT INTO Plan(MajorName, SemesterNumber, CourseNumber, DepartmentName) VALUES ("{major_name}", "{sem_number}", "{course_num}", "{dep}")'.format(major_name=major_name,sem_number=sem_number,course_num=course_num,dep=dep))
         db.get_db().commit()
         return "Success"
