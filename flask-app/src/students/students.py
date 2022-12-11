@@ -92,13 +92,25 @@ def get_plan(major):
     the_response.mimetype = 'application/json'
     return the_response
 
-
+@students.route('/students/get_by_id/<id>', methods=['GET'])
+def get_by_id(id):
+    cursor = db.get_db().cursor()
+    cursor.execute('select * from Student WHERE NUID = "{id}"'.format(id=id))
+    row_headers = [x[0] for x in cursor.description]
+    json_data = []
+    theData = cursor.fetchall()
+    for row in theData:
+        json_data.append(dict(zip(row_headers, row)))
+    the_response = make_response(jsonify(json_data))
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
 
 @students.route('/students/add_minor/',methods=['GET','POST'])
 def add_minor():
     cursor = db.get_db().cursor()
     minor = request.form['minor']
     student_id = request.form['student_id']
-    cursor.execute('UPDATE Students SET Minor = '{minor}' WHERE NUID = '{student_id}' ').format(minor=minor,student_id=student_id)
+    cursor.execute('UPDATE Student SET Minor = "{minor}" WHERE NUID = "{student_id}"; '.format(minor=minor,student_id=student_id))
     db.get_db().commit()
-    return "Success"
+    return 'student with id "{id}" has a new minor "{new_minor}"'.format(id = student_id,new_minor=minor)

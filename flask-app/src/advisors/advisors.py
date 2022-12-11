@@ -52,24 +52,21 @@ def get_name(last_name):
     # the column headers.
     for row in theData:
         json_data.append(dict(zip(column_headers, row)))
-
     return jsonify(json_data)
 
 # adding a class to a major plan
 @advisors.route('/advisors/change_plan/', methods=['GET','POST'])
 def change_plan():
         cursor = db.get_db().cursor()
-        major_name = request.form['major']
-        sem_number = request.form['number']
-        dep = request.form['dep']
-        course_num = request.form['num']
-
-        cursor.execute(
-            f''' 
-                INSERT INTO Plan(MajorName, SemesterNumber, CourseNumber, DepartmentName)
-                VALUES ('"{major_name}"', '{sem_number}', '{course_num}', '{dep}')
-            ''')
+        major_name = str(request.form['major'])
+        sem_number = int(request.form['number'])
+        dep = str(request.form['dep'])
+        course_num = int(request.form['num'])
+        cursor.execute('INSERT INTO Plan(MajorName, SemesterNumber, CourseNumber, DepartmentName) VALUES ("{major_name}", "{sem_number}", "{course_num}", "{dep}")'.format(major_name=major_name,sem_number=sem_number,course_num=course_num,dep=dep))
         db.get_db().commit()
         return "Success"
+
+
+
 
 
